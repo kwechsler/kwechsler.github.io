@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>www.keithwechsler.com</title>
+  <icon>https://www.gravatar.com/avatar/f660a01cd4f84ae7a3b5a3be8918f078</icon>
+  <subtitle>Thoughts from Keith Wechsler...</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://www.keithwechsler.com/"/>
+  <updated>2018-01-06T17:51:37.434Z</updated>
+  <id>http://www.keithwechsler.com/</id>
+  
+  <author>
+    <name>Keith Wechsler</name>
+    <email>keith@keithwechsler.com</email>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Backup a Raspberry Pi</title>
+    <link href="http://www.keithwechsler.com/2018/01/06/Backup-A-Raspberry_Pi/"/>
+    <id>http://www.keithwechsler.com/2018/01/06/Backup-A-Raspberry_Pi/</id>
+    <published>2018-01-06T15:45:00.000Z</published>
+    <updated>2018-01-06T17:51:37.434Z</updated>
+    
+    <content type="html"><![CDATA[<p>I’ve started using a Raspberry Pi 3 to learn some Python development and using Node-Red to connect services.  I want to be able to backup the files from the SD card because I don’t want to lose the configure and startup files and have to start from scratch if something goes awry.</p><p>The easiest process that I found was to load the SD card into my MacBook, which has a SD slot, and just copy the image.  After inserting the card, you need to determine the name of the drive to be backed up.  From a bash prompt, use the <em>diskutil</em> utility to list the drives in your machine.</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">diskutil list</span><br></pre></td></tr></table></figure><p><img src="/images/RaspberryPi/diskutil.png" alt="diskutil screenshot"></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dd <span class="keyword">if</span>=/dev/rdisk2 of=raspbian.stretch.setup bs=1m</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;I’ve started using a Raspberry Pi 3 to learn some Python development and using Node-Red to connect services.  I want to be able to backup
+      
+    
+    </summary>
+    
+      <category term="Utilites" scheme="http://www.keithwechsler.com/categories/Utilites/"/>
+    
+    
+      <category term="Raspberry Pi" scheme="http://www.keithwechsler.com/tags/Raspberry-Pi/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript30</title>
+    <link href="http://www.keithwechsler.com/2016/12/08/JavaScript30/"/>
+    <id>http://www.keithwechsler.com/2016/12/08/JavaScript30/</id>
+    <published>2016-12-09T04:02:06.000Z</published>
+    <updated>2017-11-09T03:55:14.625Z</updated>
+    
+    <content type="html"><![CDATA[<p>I just completed the first project in the <a href="https://javascript30.com" target="_blank" rel="noopener">#JavaScript30</a> training course offered by Wes Bos.  He provides free access to 30 videos, starter files, and assets to “build 30 things in 30 days with 30 tutorials” using nothing but plain JavaScript.  In the first project, he walks you through building a “drum kit” in your browser.  Since most of my HTML/JavaScript experience is with line of business apps in a corporate setting, I had never used the audio HTML tag before.  I enjoyed Wes’ presentation style and he may very well end up with another paying customer for his other courses.</p><p>The “drum kit” was a fun project and I’m looking forward to working on the other 29.  Wonder what’s next???</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;I just completed the first project in the &lt;a href=&quot;https://javascript30.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;#JavaScript30&lt;/a&gt; training co
+      
+    
+    </summary>
+    
+      <category term="Internet" scheme="http://www.keithwechsler.com/categories/Internet/"/>
+    
+    
+      <category term="Web Development" scheme="http://www.keithwechsler.com/tags/Web-Development/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hosting a Static Site on Github</title>
+    <link href="http://www.keithwechsler.com/2016/12/06/Hosting-a-Static-Site-on-Github/"/>
+    <id>http://www.keithwechsler.com/2016/12/06/Hosting-a-Static-Site-on-Github/</id>
+    <published>2016-12-07T04:40:17.000Z</published>
+    <updated>2017-11-09T03:55:14.624Z</updated>
+    
+    <content type="html"><![CDATA[<p>I was talking with a friend today about working on my blog this weekend and how it was hosted on Github using Github Pages.  I told him that I would send him an e-mail with info on how to setup a site and I decided instead to create this post to document the steps I took.  Hopefully it may help others who are attempting to do the same thing.</p><a id="more"></a><h1 id="Github-Setup"><a href="#Github-Setup" class="headerlink" title="Github Setup"></a>Github Setup</h1><p>The first step in the <a href="https://pages.github.com/" target="_blank" rel="noopener">process</a> is to create a repository in your Github account that matches the following format: username.github.io.  In my case, the repo needed to be named kwechsler.github.io since my username is kwechsler.  Within the repo’s Settings, you’ll need to indicate your custom domain:</p><p><img src="/images/StaticSiteConfig/GithubPages.png" alt="Custom Domain Settings"></p><p>Once you have the repository created, clone it and copy it to your PC.  The first file you’ll want to add to the repo is a CNAME file with your registered name.  The filename must be in all caps and spelled exactly like it is here.  This is a listing from my blog’s repo where you can see the CNAME file in the root of the project:</p><p><img src="/images/StaticSiteConfig/CNAME-File.png" alt="Project root files"></p><p>Inside the CNAME file, you need to list your domain.  You can see that I have the fully qualified domain name of <a href="http://www.keithwechsler.com">http://www.keithwechsler.com</a>.  The Github Pages documentation mentions having only the <a href="https://help.github.com/articles/troubleshooting-custom-domains/#github-repository-setup-errors" target="_blank" rel="noopener">bare domain or subdomain</a>, but mine is working with the full URL:</p><p><img src="/images/StaticSiteConfig/CNAME-Contents.png" alt="CNAME file contents"></p><p>You may also want to include a simple index.html HTML file so that once the configuration is complete, you’ll have a page to display some data.  I recommend that this file display “Hello World!”.  ;-)  Push these changes back to Github.</p><h1 id="DNS-Configuration"><a href="#DNS-Configuration" class="headerlink" title="DNS Configuration"></a>DNS Configuration</h1><p>After you have your configuration specified on Github, you’ll need to update the information on your DNS records.  I registered keithwechsler.com on Namecheap, so I went to the maintenance section of their site and updated the ‘A’ records with <a href="https://help.github.com/articles/setting-up-an-apex-domain/" target="_blank" rel="noopener">Github’s IP addresses</a> and entered a www subdomain that points to the kwechsler.github.io repo - you’ll use the one that you created on your DNS provider’s site:</p><p><img src="/images/StaticSiteConfig/DomainServerSetup.png" alt="DNS configuration on Namecheap"></p><p>It has been a year since I’ve made any changes to this configuration, but I believe that this is all you need to get started.  It takes some time for the DNS changes to propagate through the DNS system, but once that is complete, you are ready to start hosting some content.  If you are going to write a blog, and you want to generate a static site based on Markdown files, I suggest you check out <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>.  Good luck!</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;I was talking with a friend today about working on my blog this weekend and how it was hosted on Github using Github Pages.  I told him that I would send him an e-mail with info on how to setup a site and I decided instead to create this post to document the steps I took.  Hopefully it may help others who are attempting to do the same thing.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Internet" scheme="http://www.keithwechsler.com/categories/Internet/"/>
+    
+    
+      <category term="Web Development" scheme="http://www.keithwechsler.com/tags/Web-Development/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Re-creating a Hexo Web Site</title>
+    <link href="http://www.keithwechsler.com/2016/12/03/Re-creating-a-Hexo-Web-Site/"/>
+    <id>http://www.keithwechsler.com/2016/12/03/Re-creating-a-Hexo-Web-Site/</id>
+    <published>2016-12-03T22:22:10.000Z</published>
+    <updated>2017-11-09T03:55:14.625Z</updated>
+    
+    <content type="html"><![CDATA[<p>I recently discovered that the files I need to create a post on this site had been lost.  Not only that, but pulling down the repo from my <a href="https://bitbucket.org/uk1fan/keithwechsler.com/overview" target="_blank" rel="noopener">bitbucket</a> repo didn’t help.  Some of the critical files were not stored in the repo.  So, I’ve spent most of this weekend recreating the site and I took notes of the process and included some documentation to help with maintaining a Hexo site.</p><a id="more"></a><p>To create this site, I installed the latest version of <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo CLI</a> on my Mac and created a new site:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init keithwechsler.com</span><br></pre></td></tr></table></figure><p>I then downloaded the latest <a href="http://blog.zhangruipeng.me/hexo-theme-icarus/" target="_blank" rel="noopener">Icarus</a> theme and placed it in the themes folder of the new site.  I then took remnants of the _config.yml files for the site and the theme from files I rescued from my old Mac and began editing the files until they displayed a site.  The configuration items had changed since I had originally created the blog, so I reviewed the example _config.yml files and made changes that I thought would make a difference. </p><p>I then installed the npm modules and started the server which comes up on <a href="http://0.0.0.0:4000" target="_blank" rel="noopener">http://0.0.0.0:4000</a>:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yarn install</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure><p>The most frustrating part of the setup was that I could not get the Tags and Categories pages to generate; each call to one of those pages produced an error.  The Icarus theme <a href="https://github.com/ppoffice/hexo-theme-icarus/wiki/Theme" target="_blank" rel="noopener">documentation</a> points out that you need to copy the tags and categories folders from the _source directory into your source directory, but I was copying them to the wrong destination.  They need to be placed in the site source directory outside of the theme folder structure.  I then re-read through the Hexo documentation and discovered that I needed to install the <a href="https://github.com/hexojs/hexo-generator-feed" target="_blank" rel="noopener">hexo-generator-feed</a> module and then everything worked fine.</p><p>To enable the new <a href="https://github.com/ppoffice/hexo-theme-icarus/wiki/Search" target="_blank" rel="noopener">Insight</a> search feature, I needed to install the <a href="hexo-generator-json-content">hexo-generator-json-content</a> module:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add hexo-generator-json-content</span><br></pre></td></tr></table></figure><p>The final thing to trip me up was producing an atom-based RSS feed.  I discovered that I needed to add the <a href="https://github.com/hexojs/hexo-generator-feed" target="_blank" rel="noopener">hexo-generator-feed</a> module:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add hexo-generator-feed</span><br></pre></td></tr></table></figure><p>Once I had my environment re-created, I needed to be able to deploy the site to Github.  I had to install another module, <a href="https://github.com/hexojs/hexo-deployer-git" target="_blank" rel="noopener">hexo-deployer-git</a> and execute the command:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yarn add hexo-deployer-git</span><br><span class="line">hexo generate -deploy</span><br></pre></td></tr></table></figure><p>One thing you need to be careful about, if you decide to use these notes to setup a Hexo blog, is the .gitignore files and how the theme’s .git files will be handled.  The reason I had to re-create my environment from scratch was because I had inadvertently deleted my themes folder which had been added to my blog repo as a submodule.  There is also a .gitignore file in the theme repo that says to ignore the _config.yml file which means that your repo does not have all of your configurations.  That’s why I’ve decided to not try and maintain the two repos seperately and will probably need to perform the same steps in the future when Hexo or the theme is updated.</p><p>Now that I have an environment where I can produce new posts, I’m hopeful to begin blogging in earnest.  I know that I’ve said this before, I became bogged down about what I should post.  My approach going forward is to just write about what I’m learning and let the curation of the posts coming later.</p><h2 id="Maintaining-the-Site"><a href="#Maintaining-the-Site" class="headerlink" title="Maintaining the Site"></a>Maintaining the Site</h2><p>Links to help with maintaining a Hexo blog:</p><ul><li><a href="https://hexo.io/docs/commands.html" target="_blank" rel="noopener">Command-line commands</a></li><li><a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing posts/pages</a></li><li><a href="https://hexo.io/docs/tag-plugins.html" target="_blank" rel="noopener">Tag Plugins for posts</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;I recently discovered that the files I need to create a post on this site had been lost.  Not only that, but pulling down the repo from my &lt;a href=&quot;https://bitbucket.org/uk1fan/keithwechsler.com/overview&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;bitbucket&lt;/a&gt; repo didn’t help.  Some of the critical files were not stored in the repo.  So, I’ve spent most of this weekend recreating the site and I took notes of the process and included some documentation to help with maintaining a Hexo site.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Internet" scheme="http://www.keithwechsler.com/categories/Internet/"/>
+    
+    
+      <category term="Web Development" scheme="http://www.keithwechsler.com/tags/Web-Development/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Controlling LEDs From a Raspberry Pi</title>
+    <link href="http://www.keithwechsler.com/2016/03/08/Controlling-LEDs-From-A-Raspberry-Pi/"/>
+    <id>http://www.keithwechsler.com/2016/03/08/Controlling-LEDs-From-A-Raspberry-Pi/</id>
+    <published>2016-03-09T02:45:00.000Z</published>
+    <updated>2017-11-09T03:55:14.624Z</updated>
+    
+    <content type="html"><![CDATA[<p>A friend of ours called and asked my wife, Debbie, if we had a Raspberry Pi and knew how to use it.  Her son had a project due for school and needed to control about 20 LEDs - sequencing when they were on and off.  I had all of the hardware because I had played around with an Arduino and had bought some electronics parts that would be needed - breadboard, LEDs, resistors, and wires.  I had also purchased a <a href="https://www.adafruit.com/products/2029" target="_blank" rel="noopener">Pi Cobbler Plus</a> Breakout board to simplify connecting the Pi.  The only thing I had really done with the Pi to this point was copying the Raspian OS to an microSD memory card and booting the Pi.  Time for me to learn some Python and put the Pi to work.</p><a id="more"></a><p>I had never written any code in Python, so I went to the web to find some examples.  A friend from work had also sent me an e-mail with a couple of short routines to turn an LED on and off.  The project was to have a map of Europe and indicate different areas where battles were occuring during World War I.  The goal was to have the display to remain lit for an amount of time to indicate the duration of the battle.  I was able to spend a few minutes and came up with the following code:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/python </span><br><span class="line">import time</span><br><span class="line">import RPi.GPIO as GPIO</span><br><span class="line">GPIO.setmode(GPIO.BCM)</span><br><span class="line">GPIO.setwarnings(False)</span><br><span class="line"></span><br><span class="line">FIGHTING = GPIO.HIGH</span><br><span class="line">OVER = GPIO.LOW</span><br><span class="line"></span><br><span class="line">BATTLE01 = 4</span><br><span class="line">BATTLE02 = 17</span><br><span class="line">BATTLE03 = 22</span><br><span class="line">BATTLE04 = 10</span><br><span class="line">BATTLE05 = 9</span><br><span class="line">BATTLE06 = 11</span><br><span class="line">BATTLE07 = 5</span><br><span class="line">BATTLE08 = 6</span><br><span class="line"></span><br><span class="line">GPIO.setup(BATTLE01,GPIO.OUT)</span><br><span class="line">GPIO.setup(BATTLE02,GPIO.OUT)</span><br><span class="line">GPIO.setup(BATTLE03,GPIO.OUT)</span><br><span class="line">GPIO.setup(BATTLE04,GPIO.OUT)</span><br><span class="line">GPIO.setup(BATTLE05,GPIO.OUT)</span><br><span class="line">GPIO.setup(BATTLE06,GPIO.OUT)</span><br><span class="line">GPIO.setup(BATTLE07,GPIO.OUT)</span><br><span class="line">GPIO.setup(BATTLE08,GPIO.OUT)</span><br><span class="line"></span><br><span class="line">print(&quot;Lights test&quot;)</span><br><span class="line">GPIO.setup(BATTLE01,GPIO.FIGHTING)</span><br><span class="line">GPIO.setup(BATTLE02,GPIO.FIGHTING)</span><br><span class="line">GPIO.setup(BATTLE03,GPIO.FIGHTING)</span><br><span class="line">GPIO.setup(BATTLE04,GPIO.FIGHTING)</span><br><span class="line">GPIO.setup(BATTLE05,GPIO.FIGHTING)</span><br><span class="line">GPIO.setup(BATTLE06,GPIO.FIGHTING)</span><br><span class="line">GPIO.setup(BATTLE07,GPIO.FIGHTING)</span><br><span class="line">GPIO.setup(BATTLE08,GPIO.FIGHTING)</span><br><span class="line"></span><br><span class="line">time.sleep(3)</span><br><span class="line"></span><br><span class="line">print(&quot;Lights off&quot;)</span><br><span class="line">GPIO.setup(BATTLE01,GPIO.OVER)</span><br><span class="line">GPIO.setup(BATTLE02,GPIO.OVER)</span><br><span class="line">GPIO.setup(BATTLE03,GPIO.OVER)</span><br><span class="line">GPIO.setup(BATTLE04,GPIO.OVER)</span><br><span class="line">GPIO.setup(BATTLE05,GPIO.OVER)</span><br><span class="line">GPIO.setup(BATTLE06,GPIO.OVER)</span><br><span class="line">GPIO.setup(BATTLE07,GPIO.OVER)</span><br><span class="line">GPIO.setup(BATTLE08,GPIO.OVER)</span><br><span class="line"></span><br><span class="line">while True:</span><br><span class="line">    time.sleep(2)</span><br><span class="line"></span><br><span class="line">    print(&quot;Start sequence...&quot;)</span><br><span class="line">    GPIO.setup(BATTLE01,GPIO.FIGHTING)</span><br><span class="line">    GPIO.setup(BATTLE02,GPIO.FIGHTING)</span><br><span class="line">    GPIO.setup(BATTLE04,GPIO.FIGHTING)</span><br><span class="line">    GPIO.setup(BATTLE05,GPIO.FIGHTING)</span><br><span class="line">    GPIO.setup(BATTLE06,GPIO.FIGHTING)</span><br><span class="line">    GPIO.setup(BATTLE07,GPIO.FIGHTING)</span><br><span class="line">    </span><br><span class="line">    time.sleep(2)</span><br><span class="line">    GPIO.setup(BATTLE02,GPIO.OVER)</span><br><span class="line">    GPIO.setup(BATTLE07,GPIO.OVER)</span><br><span class="line">    GPIO.setup(BATTLE03,GPIO.FIGHTING)</span><br><span class="line">    GPIO.setup(BATTLE08,GPIO.FIGHTING)</span><br><span class="line">    </span><br><span class="line">    time.sleep(2)</span><br><span class="line">    GPIO.setup(BATTLE03,GPIO.OVER)</span><br><span class="line">    </span><br><span class="line">    time.sleep(2)</span><br><span class="line">    GPIO.setup(BATTLE01,GPIO.OVER)</span><br><span class="line">    GPIO.setup(BATTLE05,GPIO.OVER)</span><br><span class="line"></span><br><span class="line">    time.sleep(2)</span><br><span class="line">    GPIO.setup(BATTLE04,GPIO.OVER)</span><br><span class="line"></span><br><span class="line">    time.sleep(2)</span><br><span class="line">    GPIO.setup(BATTLE06,GPIO.OVER)</span><br><span class="line">    GPIO.setup(BATTLE08,GPIO.OVER)</span><br><span class="line"></span><br><span class="line">GPIO.setup(BATTLE01,GPIO.OVER)</span><br><span class="line">GPIO.setup(BATTLE02,GPIO.OVER)</span><br><span class="line">GPIO.setup(BATTLE03,GPIO.OVER)</span><br><span class="line">GPIO.setup(BATTLE04,GPIO.OVER)</span><br><span class="line">GPIO.setup(BATTLE05,GPIO.OVER)</span><br><span class="line">GPIO.setup(BATTLE06,GPIO.OVER)</span><br><span class="line">GPIO.setup(BATTLE07,GPIO.OVER)</span><br><span class="line">GPIO.setup(BATTLE08,GPIO.OVER)</span><br><span class="line"></span><br><span class="line">GPIO.cleanup()</span><br><span class="line">print(&quot;End of module...&quot;)</span><br></pre></td></tr></table></figure><p>The map was going to displayed on a standing kiosk and needed to run unattended.  I setup the Pi so that this Python app automatically ran once the Pi was turned on.  Although my friend’s son never saw this code, it was a fun exercise for me to utilize the Pi and learn some Python in the process.</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;A friend of ours called and asked my wife, Debbie, if we had a Raspberry Pi and knew how to use it.  Her son had a project due for school and needed to control about 20 LEDs - sequencing when they were on and off.  I had all of the hardware because I had played around with an Arduino and had bought some electronics parts that would be needed - breadboard, LEDs, resistors, and wires.  I had also purchased a &lt;a href=&quot;https://www.adafruit.com/products/2029&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Pi Cobbler Plus&lt;/a&gt; Breakout board to simplify connecting the Pi.  The only thing I had really done with the Pi to this point was copying the Raspian OS to an microSD memory card and booting the Pi.  Time for me to learn some Python and put the Pi to work.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Electronics" scheme="http://www.keithwechsler.com/categories/Electronics/"/>
+    
+    
+      <category term="Raspberry Pi" scheme="http://www.keithwechsler.com/tags/Raspberry-Pi/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>A More Healthy Habitat</title>
+    <link href="http://www.keithwechsler.com/2016/03/01/A-More-Healthy-Habitat/"/>
+    <id>http://www.keithwechsler.com/2016/03/01/A-More-Healthy-Habitat/</id>
+    <published>2016-03-01T15:45:00.000Z</published>
+    <updated>2017-11-09T03:55:14.624Z</updated>
+    
+    <content type="html"><![CDATA[<p>Like most people in my profession, I spend most of my waking hours behind a desk - normally 8+ hours at the office and 2-3 hours at home each evening.  I’ve suffered with lower back pain for a number of years and have recently switched to using a sit-stand desk both at work and at home to help alleviate some of the pain and stiffness.<br><blockquote><p>Today, our bodies are breaking down from obesity, high blood pressure, diabetes, cancer, depression, and the cascade of health ills and everyday malaise that come from what scientists have named sitting disease.</p><footer><strong>James Levine, MD, PhD</strong><cite><a href="http://www.juststand.org/tabid/674/language/en-US/default.aspx" target="_blank" rel="noopener">juststand.org</a></cite></footer></blockquote><br><a id="more"></a><br>At work, I had noticed a few adjustable workstations in various cubicles throughout our building and thought that one might be helpful to me.  I asked my boss about getting one and he immediately submitted a Service Request to have one ordered.  (Thanks, Steve!)  It turns out, that before our company will purchase one of these desks, you are required to fill out a survey about why you need one and be interviewed by someone from our Health and Wellness (Ergonomics) group.  </p><p>Once I completed these steps, an <a href="http://www.ergotron.com/ProductsDetails/tabid/65/PRDID/378/language/en-US/Default.aspx" target="_blank" rel="noopener">Ergotron Workfit-S Dual Monitor Sit-Stand Workstation</a>  showed up with the installers.  You can see a video of how it works on their website.<br><div class="video-container"><iframe src="//www.youtube.com/embed/EV_i_mi---w" frameborder="0" allowfullscreen></iframe></div></p><p>Here’s my current setup:</p><p><img src="/images/Desk/Work-Lowered.jpg" alt="Work Desk Lowered"></p><p>By pulling up on the keyboard tray, I can adjust it to a height where I can stand and work.  The vertical distance between the monitors and keyboard tray can be adjusted so that you have a comfortable viewing angle while typing.  Since I have bi-focals, I find it more comfortable to have the monitors lower than most people.</p><p><img src="/images/Desk/Work-Raised.jpg" alt="Work Desk Raised"></p><p>I’ve had a lot less back pain from being able to modify my stance.  I normally stand about half of the time; it’s most helpful to switch between standing and sitting because your legs and feet will suffer if you stand for too long.</p><p>I decided to use part of my bonus to purchase a stand-up desk for home.  I ordered an <a href="https://www.autonomous.ai/desk" target="_blank" rel="noopener">Autonomous Desk</a> and couldn’t be happier.  I finally have room to setup both laptops and have some of my electronics gear accessible, too.  I’ve ordered a 28” Asus Ultra High Density (UHD) monitor and should receive it some time next week.  </p><p><img src="/images/Desk/Home-Lowered.jpg" alt="Home Desk Lowered"></p><p><img src="/images/Desk/Home-Raised.jpg" alt="Home Desk Raised"></p><p>I’ll post an update once I get the monitor and cable management installed.  If you are using a sit-stand solution, leave a comment and let me know how it works for you.</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Like most people in my profession, I spend most of my waking hours behind a desk - normally 8+ hours at the office and 2-3 hours at home each evening.  I’ve suffered with lower back pain for a number of years and have recently switched to using a sit-stand desk both at work and at home to help alleviate some of the pain and stiffness.&lt;br&gt;&lt;blockquote&gt;&lt;p&gt;Today, our bodies are breaking down from obesity, high blood pressure, diabetes, cancer, depression, and the cascade of health ills and everyday malaise that come from what scientists have named sitting disease.&lt;/p&gt;
+&lt;footer&gt;&lt;strong&gt;James Levine, MD, PhD&lt;/strong&gt;&lt;cite&gt;&lt;a href=&quot;http://www.juststand.org/tabid/674/language/en-US/default.aspx&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;juststand.org&lt;/a&gt;&lt;/cite&gt;&lt;/footer&gt;&lt;/blockquote&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Office" scheme="http://www.keithwechsler.com/categories/Office/"/>
+    
+    
+      <category term="Gadget" scheme="http://www.keithwechsler.com/tags/Gadget/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Getting Started with AngularJS</title>
+    <link href="http://www.keithwechsler.com/2016/02/28/Getting-Started-with-AngularJS/"/>
+    <id>http://www.keithwechsler.com/2016/02/28/Getting-Started-with-AngularJS/</id>
+    <published>2016-02-29T02:45:33.000Z</published>
+    <updated>2017-11-09T03:55:14.624Z</updated>
+    
+    <content type="html"><![CDATA[<p>I have spent the last couple of weeks going through the <a href="https://www.pluralsight.com/courses/angularjs-get-started" target="_blank" rel="noopener">“AngularJS: Get Started”</a> course produced by <a href="http://www.odetocode.com" target="_blank" rel="noopener">Scott Allen</a> at Pluralsight.  It is a beginner-level course that walks you through the process of creating your first AngularJS single page application (SPA).  If you are familiar with creating a web page, and have some basic knowledge of JavaScript programming, you should be able to walk through the example with Scott and produce your own copy of the application.  </p><a id="more"></a><p>Since AngularJS is a client-side JavaScript framework, you don’t have to have access to a server to work on most of the code.   Scott uses the web-based <a href="http://plnkr.co/" target="_blank" rel="noopener">Plunker</a> editor as he walks through the code, but I ran into issues getting it to work.  I believe that it may be related to differences in the JavaScript libraries between the time that Scott produced the course (June 2014) and now.  I did most of my initial development opening local files on my computer in the browser, but ran into issues when I attempted to use the ng-include directive because the browser was preventing a XSS (cross-site scripting) attack.  To get around this issue, I found the zero-configuration command-line <a href="https://www.npmjs.com/package/http-server" target="_blank" rel="noopener">http-server</a> that worked like a charm.  I intend to continue to use this tool for development purposes.  </p><p>The sample application is a GitHub Viewer.  It allows the user to enter a GitHub User ID and then retrieves a list of the public repositories maintained by the user on GitHub.</p><p><img src="/images/GitHubViewer/Repos.jpg" alt="GitHub Viewer Repo List"></p><p>By clicking on one of the repos, the application displays the number of Open Issues and the Contributors for the selected repo.</p><p><img src="/images/GitHubViewer/Contributors.jpg" alt="GitHub Viewer Contributors List"></p><p>Since I had never used AngularJS before, I went through each of the lessons exactly as Scott had outlined in the course.  There were a couple of places where the GitHub API had changed and it no longer matched the original content of the course, but Scott had placed updated information in the screenshots so that it was simple to understand the changes that needed to be made.  He also went over the use of the $interval command to implement a countdown time, but I chose to not implement that feature in my version of the app.  At the end of the course, Scott issued a challenge to implement the functionality to display the repo details and I was able to implement about 80% of it before looking at his solution.  There were a couple of items that I wasn’t quite clear how to implement, but I felt good that I was able to complete as much as I did on my own.</p><p>My company has recently decided to move from the IBM Rational toolset (ClearCase / ClearQuest) for source control management to the Atlassain Git-based BitBucket Server and so I chose to store my application on their public site at <a href="https://bitbucket.org/uk1fan/nggithubviewer" target="_blank" rel="noopener">https://bitbucket.org</a>.  I’m enjoying using Git and found BitBucket easy to setup and use.  I may modify the sample application to also support BitBucket since they provide a similar API to the one provided by GitHub.</p><p>This is an excellent course that I highly recommend if you are interested in learning about AngularJS.  I know that it has sparked my interest in AngularJS and I plan on choosing another course on this framework in the near future.  I’ve started listening to the <a href="https://devchat.tv/adventures-in-angular/" target="_blank" rel="noopener">Adventures in Angular</a> podcast and have found it to be interesting and entertaining.  The AngularJS team has recently released the beta version of Angular 2.0 and there will be plenty to learn in this new version.  I believe that I may choose to go through <a href="https://www.pluralsight.com/courses/angular-2-first-look" target="_blank" rel="noopener">Angular 2: First Look</a> course authored by <a href="http://johnpapa.net/" target="_blank" rel="noopener">John Papa</a> to get a head start on the new version.  I’ve had the pleasure of hearing John speak at a couple of Code Camps here in Florida and believe that this course will be a good investment of time.  John has been working on the <a href="https://angular.io/docs/ts/latest/tutorial/" target="_blank" rel="noopener">Tour of Heroes</a> Angular 2 tutorial and I plan to also work through it.  </p><p>If you decide to look at AngularJS, or you’re already an expert, and come across any resources that you find beneficial, please leave a comment with the information and I’ll check them out.  </p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;I have spent the last couple of weeks going through the &lt;a href=&quot;https://www.pluralsight.com/courses/angularjs-get-started&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;“AngularJS: Get Started”&lt;/a&gt; course produced by &lt;a href=&quot;http://www.odetocode.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Scott Allen&lt;/a&gt; at Pluralsight.  It is a beginner-level course that walks you through the process of creating your first AngularJS single page application (SPA).  If you are familiar with creating a web page, and have some basic knowledge of JavaScript programming, you should be able to walk through the example with Scott and produce your own copy of the application.  &lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Internet" scheme="http://www.keithwechsler.com/categories/Internet/"/>
+    
+    
+      <category term="Web Development" scheme="http://www.keithwechsler.com/tags/Web-Development/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Save Your Discoveries</title>
+    <link href="http://www.keithwechsler.com/2015/12/05/Save-Your-Discoveries/"/>
+    <id>http://www.keithwechsler.com/2015/12/05/Save-Your-Discoveries/</id>
+    <published>2015-12-05T15:08:33.000Z</published>
+    <updated>2017-11-09T03:55:14.625Z</updated>
+    
+    <content type="html"><![CDATA[<p>I spend a lot of time “surfing the web” and come across a lot of information that I’d like to refer back to at a later time.  I’ve used a number of tools to try and keep up with all of this stuff and for the past four years I’ve been using <a href="http://www.pinboard.in" target="_blank" rel="noopener">Pinboard</a> because it is cross-platform and has the ability to add links through e-mail.  I was one of the earlier supporters of the site.  I’ve also purchased a couple of client apps to make finding and using these “Pinned” sites quicker.  However, the web interface of the Pinboard site is very dated and no frills.</p><p>Today I came across <a href="https://www.kifi.com/" target="_blank" rel="noopener">kifi</a> which is a website and an integrated plug-in for Chrome and Firefox that allows you to capture and collaborate on pages that you find on the web.  </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;I spend a lot of time “surfing the web” and come across a lot of information that I’d like to refer back to at a later time.  I’ve used a
+      
+    
+    </summary>
+    
+      <category term="Internet" scheme="http://www.keithwechsler.com/categories/Internet/"/>
+    
+    
+      <category term="Web" scheme="http://www.keithwechsler.com/tags/Web/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Why Blog?</title>
+    <link href="http://www.keithwechsler.com/2015/11/17/Why-Blog/"/>
+    <id>http://www.keithwechsler.com/2015/11/17/Why-Blog/</id>
+    <published>2015-11-17T16:07:45.000Z</published>
+    <updated>2017-11-09T03:55:14.625Z</updated>
+    
+    <content type="html"><![CDATA[<p>I became a fan of Microsoft’s <a href="http://www.hanselman.com" target="_blank" rel="noopener">Scott Hanselman</a> from listening to his technology-related podcast <a href="http://www.hanselminutes.com" target="_blank" rel="noopener">Hanselminutes</a> and was inspired by a couple of his blog posts to start my own.  He suggests that this is a way for individuals to contribute back to the <a href="http://www.hanselman.com/blog/YourBlogIsTheEngineOfCommunity.aspx" target="_blank" rel="noopener">community</a> and participate in the global discussion.  He also recommended that you have your own <a href="http://www.hanselman.com/blog/YourWordsAreWasted.aspx" target="_blank" rel="noopener">custom domain name</a> and you “own” the content that you produce and not rely on social networks to maintain your web presence.  Another great source of information is the free course that Scott produced with Rob Conery entitled <a href="http://getinvolved.hanselman.com&quot;" target="_blank" rel="noopener">“Get Involved”</a> were they discuss becoming a “social developer”.  Follow Scott on Twitter at <a href="https://twitter.com/shanselman" target="_blank" rel="noopener">@shanselman</a>; everything he produces is gold.</p><p>Anyone who knows me will see two big problems with me writing a blog.  First, I don’t enjoy writing - in fact, I would say that I dislike writing text and have since my days at Cooper Elementary school. I enjoyed all of my classes more than English. Second, it seems that I am continually drawn to the “shiny” new technology and that I don’t spend enough time on any one subject to learn enough that what I share will be of benefit to someone other than myself.  John Sonmez, founder of the <a href="http://simpleprogrammer.com" target="_blank" rel="noopener">Simple Programmer</a> site, recommends that you focus on a niche and become the expert for that area; my plan is to write about whatever interests me at the time and hope that it leads to something beneficial.</p><p>I created this first post using the <a href="http://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> static website generator.  I was intrigued with the idea of maintaining a blog without having to keep up with a CMS (<a href="http://www.wordpress.org" target="_blank" rel="noopener">WordPress</a>, ) and database updates and security breaches.  Jekyll is written in Ruby and I haven’t had a great desire to learn the language.  I’ve been interested in Node.js and have some experience in my day job with writing JavaScript code.  A search on JavaScript-based static site generators revealed a couple of alternatives and I settled on <a href="http://hexo.io" target="_blank" rel="noopener">Hexo</a>.  It works like Jekyll, but if I want to try and extend the platform, I’ll be using JavaScript instead of Ruby.  At least I don’t have a lot of blog posts to try and convert.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;I became a fan of Microsoft’s &lt;a href=&quot;http://www.hanselman.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Scott Hanselman&lt;/a&gt; from listening to his
+      
+    
+    </summary>
+    
+      <category term="Internet" scheme="http://www.keithwechsler.com/categories/Internet/"/>
+    
+    
+      <category term="Site" scheme="http://www.keithwechsler.com/tags/Site/"/>
+    
+  </entry>
+  
+</feed>
