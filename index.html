@@ -172,7 +172,7 @@ ga('send', 'pageview');
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                9
+                11
                 <span>posts</span>
             </div>
             <div class="article-info-block">
@@ -219,6 +219,273 @@ ga('send', 'pageview');
 
             
             <section id="main">
+    <article id="false-Raspberry-Pi-Network-Tunnel" class="article article-type-false" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/01/08/Raspberry-Pi-Network-Tunnel/">Raspberry Pi - Network Tunnel</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/01/08/Raspberry-Pi-Network-Tunnel/">
+            <time datetime="2018-01-09T00:00:00.000Z" itemprop="datePublished">2018-01-08</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Utilites/">Utilites</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Raspberry-Pi/">Raspberry Pi</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>I plan to use a number of different web utilites that will require my Raspberry Pi to be available from the Internet.  One of the easiest methods that I’ve found is to use <a href="https://ngrok.com" target="_blank" rel="noopener">“ngrok”</a> to provide a secure tunnel.  To expose an http service on a particular port, execute the program with the protocol and port:</p>
+<figure class="highlight shell"><figcaption><span>ngrok command</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./ngrok http 1880</span><br></pre></td></tr></table></figure>
+<p>This example will allow you to use Node-Red to develop a web service on your Raspberry Pi that can be used as a webhook on an Amazon Echo Alexa skill.</p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://www.keithwechsler.com/2018/01/08/Raspberry-Pi-Network-Tunnel/" data-id="cjc532c2a000zueutyzeljmby" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://www.keithwechsler.com/2018/01/08/Raspberry-Pi-Network-Tunnel/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://www.keithwechsler.com/2018/01/08/Raspberry-Pi-Network-Tunnel/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-Raspberry-Pi-Access-to-the-Filesystem" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/01/07/Raspberry-Pi-Access-to-the-Filesystem/">Raspberry Pi - Access to the Filesystem</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/01/07/Raspberry-Pi-Access-to-the-Filesystem/">
+            <time datetime="2018-01-07T20:00:00.000Z" itemprop="datePublished">2018-01-07</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Utilites/">Utilites</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Raspberry-Pi/">Raspberry Pi</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><p>To make using the Raspberry Pi easier, I installed a couple of utilities.  I enabled VNC access so that I can open the Raspberry Pi’s GUI from my MacBook and I also want to be able to access the Pi’s filesystem directly.</p></p>
+            <p class="article-more-link">
+                <a href="/2018/01/07/Raspberry-Pi-Access-to-the-Filesystem/#more">Read More</a>
+            </p>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://www.keithwechsler.com/2018/01/07/Raspberry-Pi-Access-to-the-Filesystem/" data-id="cjc532c1u000cueutf6vszt8i" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://www.keithwechsler.com/2018/01/07/Raspberry-Pi-Access-to-the-Filesystem/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://www.keithwechsler.com/2018/01/07/Raspberry-Pi-Access-to-the-Filesystem/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-Backup-A-Raspberry_Pi" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -261,13 +528,10 @@ ga('send', 'pageview');
         
         <div class="article-entry" itemprop="articleBody">
         
-            
-            <p>I’ve started using a Raspberry Pi 3 to learn some Python development and using Node-Red to connect services.  I want to be able to backup the files from the SD card because I don’t want to lose the configure and startup files and have to start from scratch if something goes awry.</p>
-<p>The easiest process that I found was to load the SD card into my MacBook, which has a SD slot, and just copy the image.  After inserting the card, you need to determine the name of the drive to be backed up.  From a bash prompt, use the <em>diskutil</em> utility to list the drives in your machine.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">diskutil list</span><br></pre></td></tr></table></figure>
-<p><img src="/images/RaspberryPi/diskutil.png" alt="diskutil screenshot"></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dd <span class="keyword">if</span>=/dev/rdisk2 of=raspbian.stretch.setup bs=1m</span><br></pre></td></tr></table></figure>
-
+            <p><p>I’ve started using a Raspberry Pi 3 to learn some new technologies.  I want to be able to backup the files from the SD card used by the system because I don’t want to lose the configure and startup files and have to start from scratch if something goes awry.</p></p>
+            <p class="article-more-link">
+                <a href="/2018/01/06/Backup-A-Raspberry_Pi/#more">Read More</a>
+            </p>
         
         </div>
         <footer class="article-footer">
@@ -277,7 +541,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://www.keithwechsler.com/2018/01/06/Backup-A-Raspberry_Pi/" data-id="cjc3ncz7x0007d6utaus41f9m" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://www.keithwechsler.com/2018/01/06/Backup-A-Raspberry_Pi/" data-id="cjc532c1t0008ueutkd3lxc73" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -410,7 +674,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://www.keithwechsler.com/2016/12/08/JavaScript30/" data-id="cjc3ncz82000id6utn6qfx55s" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://www.keithwechsler.com/2016/12/08/JavaScript30/" data-id="cjc532c1z000jueutduweni95" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -543,7 +807,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://www.keithwechsler.com/2016/12/06/Hosting-a-Static-Site-on-Github/" data-id="cjc3ncz81000dd6ut5m550jmx" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://www.keithwechsler.com/2016/12/06/Hosting-a-Static-Site-on-Github/" data-id="cjc532c1w000dueuttd48y2qb" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -676,7 +940,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://www.keithwechsler.com/2016/12/03/Re-creating-a-Hexo-Web-Site/" data-id="cjc3ncz84000kd6utns2f3k7u" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://www.keithwechsler.com/2016/12/03/Re-creating-a-Hexo-Web-Site/" data-id="cjc532c23000rueut6avktjo4" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -754,273 +1018,6 @@ ga('send', 'pageview');
 
 
 
-    <article id="post-Controlling-LEDs-From-A-Raspberry-Pi" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/03/08/Controlling-LEDs-From-A-Raspberry-Pi/">Controlling LEDs From a Raspberry Pi</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/03/08/Controlling-LEDs-From-A-Raspberry-Pi/">
-            <time datetime="2016-03-09T02:45:00.000Z" itemprop="datePublished">2016-03-08</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Electronics/">Electronics</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Raspberry-Pi/">Raspberry Pi</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p>A friend of ours called and asked my wife, Debbie, if we had a Raspberry Pi and knew how to use it.  Her son had a project due for school and needed to control about 20 LEDs - sequencing when they were on and off.  I had all of the hardware because I had played around with an Arduino and had bought some electronics parts that would be needed - breadboard, LEDs, resistors, and wires.  I had also purchased a <a href="https://www.adafruit.com/products/2029" target="_blank" rel="noopener">Pi Cobbler Plus</a> Breakout board to simplify connecting the Pi.  The only thing I had really done with the Pi to this point was copying the Raspian OS to an microSD memory card and booting the Pi.  Time for me to learn some Python and put the Pi to work.</p></p>
-            <p class="article-more-link">
-                <a href="/2016/03/08/Controlling-LEDs-From-A-Raspberry-Pi/#more">Read More</a>
-            </p>
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://www.keithwechsler.com/2016/03/08/Controlling-LEDs-From-A-Raspberry-Pi/" data-id="cjc3ncz7y0008d6ut3qarsp9c" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://www.keithwechsler.com/2016/03/08/Controlling-LEDs-From-A-Raspberry-Pi/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://www.keithwechsler.com/2016/03/08/Controlling-LEDs-From-A-Raspberry-Pi/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-A-More-Healthy-Habitat" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/03/01/A-More-Healthy-Habitat/">A More Healthy Habitat</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/03/01/A-More-Healthy-Habitat/">
-            <time datetime="2016-03-01T15:45:00.000Z" itemprop="datePublished">2016-03-01</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Office/">Office</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Gadget/">Gadget</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p>Like most people in my profession, I spend most of my waking hours behind a desk - normally 8+ hours at the office and 2-3 hours at home each evening.  I’ve suffered with lower back pain for a number of years and have recently switched to using a sit-stand desk both at work and at home to help alleviate some of the pain and stiffness.<br><blockquote><p>Today, our bodies are breaking down from obesity, high blood pressure, diabetes, cancer, depression, and the cascade of health ills and everyday malaise that come from what scientists have named sitting disease.</p>
-<footer><strong>James Levine, MD, PhD</strong><cite><a href="http://www.juststand.org/tabid/674/language/en-US/default.aspx" target="_blank" rel="noopener">juststand.org</a></cite></footer></blockquote><br></p>
-            <p class="article-more-link">
-                <a href="/2016/03/01/A-More-Healthy-Habitat/#more">Read More</a>
-            </p>
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://www.keithwechsler.com/2016/03/01/A-More-Healthy-Habitat/" data-id="cjc3ncz7t0002d6ut7a4rwg26" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://www.keithwechsler.com/2016/03/01/A-More-Healthy-Habitat/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://www.keithwechsler.com/2016/03/01/A-More-Healthy-Habitat/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
     <nav id="page-nav">
         <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
@@ -1033,6 +1030,24 @@ ga('send', 'pageview');
         <h3 class="widget-title">recent</h3>
         <div class="widget">
             <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Utilites/">Utilites</a></p>
+                            <p class="item-title"><a href="/2018/01/08/Raspberry-Pi-Network-Tunnel/" class="title">Raspberry Pi - Network Tunnel</a></p>
+                            <p class="item-date"><time datetime="2018-01-09T00:00:00.000Z" itemprop="datePublished">2018-01-08</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Utilites/">Utilites</a></p>
+                            <p class="item-title"><a href="/2018/01/07/Raspberry-Pi-Access-to-the-Filesystem/" class="title">Raspberry Pi - Access to the Filesystem</a></p>
+                            <p class="item-date"><time datetime="2018-01-07T20:00:00.000Z" itemprop="datePublished">2018-01-07</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -1061,24 +1076,6 @@ ga('send', 'pageview');
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Internet/">Internet</a></p>
-                            <p class="item-title"><a href="/2016/12/03/Re-creating-a-Hexo-Web-Site/" class="title">Re-creating a Hexo Web Site</a></p>
-                            <p class="item-date"><time datetime="2016-12-03T22:22:10.000Z" itemprop="datePublished">2016-12-03</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Electronics/">Electronics</a></p>
-                            <p class="item-title"><a href="/2016/03/08/Controlling-LEDs-From-A-Raspberry-Pi/" class="title">Controlling LEDs From a Raspberry Pi</a></p>
-                            <p class="item-date"><time datetime="2016-03-09T02:45:00.000Z" itemprop="datePublished">2016-03-08</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1088,7 +1085,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Electronics/">Electronics</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Internet/">Internet</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Office/">Office</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Utilites/">Utilites</a><span class="category-list-count">1</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Electronics/">Electronics</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Internet/">Internet</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Office/">Office</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Utilites/">Utilites</a><span class="category-list-count">3</span></li></ul>
         </div>
     </div>
 
@@ -1097,7 +1094,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gadget/">Gadget</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Raspberry-Pi/">Raspberry Pi</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Site/">Site</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web-Development/">Web Development</a><span class="tag-list-count">4</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gadget/">Gadget</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Raspberry-Pi/">Raspberry Pi</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Site/">Site</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web-Development/">Web Development</a><span class="tag-list-count">4</span></li></ul>
         </div>
     </div>
 
@@ -1106,7 +1103,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/Gadget/" style="font-size: 10px;">Gadget</a> <a href="/tags/Raspberry-Pi/" style="font-size: 15px;">Raspberry Pi</a> <a href="/tags/Site/" style="font-size: 10px;">Site</a> <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/Web-Development/" style="font-size: 20px;">Web Development</a>
+            <a href="/tags/Gadget/" style="font-size: 10px;">Gadget</a> <a href="/tags/Raspberry-Pi/" style="font-size: 20px;">Raspberry Pi</a> <a href="/tags/Site/" style="font-size: 10px;">Site</a> <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/Web-Development/" style="font-size: 20px;">Web Development</a>
         </div>
     </div>
 
@@ -1115,7 +1112,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li></ul>
         </div>
     </div>
 

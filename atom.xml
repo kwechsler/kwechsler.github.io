@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.keithwechsler.com/"/>
-  <updated>2018-01-06T17:51:37.434Z</updated>
+  <updated>2018-01-07T04:30:43.421Z</updated>
   <id>http://www.keithwechsler.com/</id>
   
   <author>
@@ -17,20 +17,64 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Backup a Raspberry Pi</title>
-    <link href="http://www.keithwechsler.com/2018/01/06/Backup-A-Raspberry_Pi/"/>
-    <id>http://www.keithwechsler.com/2018/01/06/Backup-A-Raspberry_Pi/</id>
-    <published>2018-01-06T15:45:00.000Z</published>
-    <updated>2018-01-06T17:51:37.434Z</updated>
+    <title>Raspberry Pi - Network Tunnel</title>
+    <link href="http://www.keithwechsler.com/2018/01/08/Raspberry-Pi-Network-Tunnel/"/>
+    <id>http://www.keithwechsler.com/2018/01/08/Raspberry-Pi-Network-Tunnel/</id>
+    <published>2018-01-09T00:00:00.000Z</published>
+    <updated>2018-01-07T04:30:43.421Z</updated>
     
-    <content type="html"><![CDATA[<p>I’ve started using a Raspberry Pi 3 to learn some Python development and using Node-Red to connect services.  I want to be able to backup the files from the SD card because I don’t want to lose the configure and startup files and have to start from scratch if something goes awry.</p><p>The easiest process that I found was to load the SD card into my MacBook, which has a SD slot, and just copy the image.  After inserting the card, you need to determine the name of the drive to be backed up.  From a bash prompt, use the <em>diskutil</em> utility to list the drives in your machine.</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">diskutil list</span><br></pre></td></tr></table></figure><p><img src="/images/RaspberryPi/diskutil.png" alt="diskutil screenshot"></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dd <span class="keyword">if</span>=/dev/rdisk2 of=raspbian.stretch.setup bs=1m</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<p>I plan to use a number of different web utilites that will require my Raspberry Pi to be available from the Internet.  One of the easiest methods that I’ve found is to use <a href="https://ngrok.com" target="_blank" rel="noopener">“ngrok”</a> to provide a secure tunnel.  To expose an http service on a particular port, execute the program with the protocol and port:</p><figure class="highlight shell"><figcaption><span>ngrok command</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./ngrok http 1880</span><br></pre></td></tr></table></figure><p>This example will allow you to use Node-Red to develop a web service on your Raspberry Pi that can be used as a webhook on an Amazon Echo Alexa skill.</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;I’ve started using a Raspberry Pi 3 to learn some Python development and using Node-Red to connect services.  I want to be able to backup
+        &lt;p&gt;I plan to use a number of different web utilites that will require my Raspberry Pi to be available from the Internet.  One of the easiest
       
+    
+    </summary>
+    
+      <category term="Utilites" scheme="http://www.keithwechsler.com/categories/Utilites/"/>
+    
+    
+      <category term="Raspberry Pi" scheme="http://www.keithwechsler.com/tags/Raspberry-Pi/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Raspberry Pi - Access to the Filesystem</title>
+    <link href="http://www.keithwechsler.com/2018/01/07/Raspberry-Pi-Access-to-the-Filesystem/"/>
+    <id>http://www.keithwechsler.com/2018/01/07/Raspberry-Pi-Access-to-the-Filesystem/</id>
+    <published>2018-01-07T20:00:00.000Z</published>
+    <updated>2018-01-07T17:59:25.164Z</updated>
+    
+    <content type="html"><![CDATA[<p>To make using the Raspberry Pi easier, I installed a couple of utilities.  I enabled VNC access so that I can open the Raspberry Pi’s GUI from my MacBook and I also want to be able to access the Pi’s filesystem directly.</p><a id="more"></a><p>The first thing that I recommend that you do is to give your Raspberry Pi a unique hostname and make sure that your router assigns a static IP address to this device.  This will allow you to access this computer in a consistent matter.</p><p>Access to the Raspberry Pi’s filesystem from my MacBook will allow me to move and edit files from my primary machine.  An easy way to do this is to install the <em>Netatalk</em> utility that implements the AFP (Apple Filing Protocol) and provides native access through Finder.  To install netatalk:</p><figure class="highlight shell"><figcaption><span>install netatalk</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo appt-get install netatalk</span><br></pre></td></tr></table></figure><p>Then from Finder, just click on Go and Connect to Server:<br><img src="/images/RaspberryPi/finder-menu-connect-to-server.png" alt="Connect to Server"></p><p>Enter, or choose, your Raspberry Pi and enter your credentials:<br><img src="/images/RaspberryPi/finder-connect-to-server.png" alt="Choose the Server"></p><p>From the Shared section of the Finder Sidebar, you should see your Raspberry Pi. You can see my <em>raspberrypi3</em> at the bottom of the list and the files from its Home directory on the right.  Navigate through it like you would any other part of your Macbook filesystem:<br><img src="/images/RaspberryPi/finder-shared-raspberry-pi.png" alt="Find Your Files"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;To make using the Raspberry Pi easier, I installed a couple of utilities.  I enabled VNC access so that I can open the Raspberry Pi’s GUI from my MacBook and I also want to be able to access the Pi’s filesystem directly.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Utilites" scheme="http://www.keithwechsler.com/categories/Utilites/"/>
+    
+    
+      <category term="Raspberry Pi" scheme="http://www.keithwechsler.com/tags/Raspberry-Pi/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Backup a Raspberry Pi</title>
+    <link href="http://www.keithwechsler.com/2018/01/06/Backup-A-Raspberry_Pi/"/>
+    <id>http://www.keithwechsler.com/2018/01/06/Backup-A-Raspberry_Pi/</id>
+    <published>2018-01-06T15:45:00.000Z</published>
+    <updated>2018-01-06T19:05:16.358Z</updated>
+    
+    <content type="html"><![CDATA[<p>I’ve started using a Raspberry Pi 3 to learn some new technologies.  I want to be able to backup the files from the SD card used by the system because I don’t want to lose the configure and startup files and have to start from scratch if something goes awry.</p><a id="more"></a><p>The easiest process that I found was to load the SD card into my MacBook, which has a SD slot, and just copy the image.  After inserting the card, you need to determine the name of the drive to be backed up.  From a bash prompt, use the <em>diskutil</em> utility to list the drives in your machine.</p><figure class="highlight shell"><figcaption><span>diskutil command</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">diskutil list</span><br></pre></td></tr></table></figure><p><img src="/images/RaspberryPi/diskutil.png" alt="diskutil"></p><p>From these results, you can see that 16 GB Linux disk is disk2.  You feed this value into the dd command and use the rdisk (raw disk) to speed up the operation:</p><figure class="highlight shell"><figcaption><span>dd</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dd if=/dev/rdisk2 of=raspbian.stretch.setup bs=1m</span><br></pre></td></tr></table></figure><p>This will create the file <em>raspbian.stretch.setup</em> in the current directory:</p><p><img src="/images/RaspberryPi/file-before-zip.png" alt="ls -al (before zip)"></p><p>To reduce the size of the backup, you can use the zip command to compress the file.</p><figure class="highlight shell"><figcaption><span>zip</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zip -r stretch.setup raspbian.stretch.setup</span><br></pre></td></tr></table></figure><p><img src="/images/RaspberryPi/file-after-zip.png" alt="ls -al (after zip)"></p><p>You can see that the filesize has been deflated 86% from 16 GB to 2 GB.  The next step in the process would be to delete the original file.</p><p>I plan to try and write a Python script to automate this process.  Maybe you’ll see a blog post on that process if I do.</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;I’ve started using a Raspberry Pi 3 to learn some new technologies.  I want to be able to backup the files from the SD card used by the system because I don’t want to lose the configure and startup files and have to start from scratch if something goes awry.&lt;/p&gt;
     
     </summary>
     
