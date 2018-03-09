@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.keithwechsler.com/"/>
-  <updated>2018-01-07T04:30:43.421Z</updated>
+  <updated>2018-03-09T00:40:14.549Z</updated>
   <id>http://www.keithwechsler.com/</id>
   
   <author>
@@ -21,15 +21,15 @@
     <link href="http://www.keithwechsler.com/2018/01/08/Raspberry-Pi-Network-Tunnel/"/>
     <id>http://www.keithwechsler.com/2018/01/08/Raspberry-Pi-Network-Tunnel/</id>
     <published>2018-01-09T00:00:00.000Z</published>
-    <updated>2018-01-07T04:30:43.421Z</updated>
+    <updated>2018-03-09T00:40:14.549Z</updated>
     
-    <content type="html"><![CDATA[<p>I plan to use a number of different web utilites that will require my Raspberry Pi to be available from the Internet.  One of the easiest methods that I’ve found is to use <a href="https://ngrok.com" target="_blank" rel="noopener">“ngrok”</a> to provide a secure tunnel.  To expose an http service on a particular port, execute the program with the protocol and port:</p><figure class="highlight shell"><figcaption><span>ngrok command</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./ngrok http 1880</span><br></pre></td></tr></table></figure><p>This example will allow you to use Node-Red to develop a web service on your Raspberry Pi that can be used as a webhook on an Amazon Echo Alexa skill.</p>]]></content>
+    <content type="html"><![CDATA[<p>I plan to use a number of different web utilites that will require my Raspberry Pi to temporarily be available from the Internet.  One of the easiest methods that I’ve found is to use <a href="https://ngrok.com" target="_blank" rel="noopener">“ngrok”</a> to provide a secure tunnel.  To expose an http service on a particular port, execute the program with the protocol and port:</p><figure class="highlight shell"><figcaption><span>ngrok command</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./ngrok http 1880</span><br></pre></td></tr></table></figure><p>This example will allow you to use Node-Red to develop a web service on your Raspberry Pi that can be used as a webhook on an Amazon Echo Alexa skill.</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;I plan to use a number of different web utilites that will require my Raspberry Pi to be available from the Internet.  One of the easiest
+        &lt;p&gt;I plan to use a number of different web utilites that will require my Raspberry Pi to temporarily be available from the Internet.  One of
       
     
     </summary>
